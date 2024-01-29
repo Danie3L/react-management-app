@@ -1,7 +1,8 @@
+import ProjectsMenu from './components/ProjectsMenu';
 function App() {
   return (
     <>
-      <h1>hi</h1>
+      <ProjectsMenu />
     </>
   );
 }

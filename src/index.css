@@ -5,3 +5,31 @@
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
 }
+#root {
+  height: 100vh;
+}
+.menu-section {
+  width: 20%;
+  background: #000;
+  height: 85%;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  border-top-right-radius: 25px;
+}
+.menu-heading {
+  font-size: 26px;
+  text-align: center;
+  margin: 30px 0 10px 0;
+  text-transform: uppercase;
+}
+.menu-button {
+  display: block;
+  border: none;
+  background: #ffffff;
+  padding: 8px 26px;
+  margin: 20px auto;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 4px;
+}
