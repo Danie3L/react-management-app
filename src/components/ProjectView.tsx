@@ -4,6 +4,7 @@ type ProjectViewProps = {
 
 export default function ProjectView({ projectData }: ProjectViewProps) {
   const { title, description, dueDate } = projectData;
+
   return (
     <section className='project-section'>
       <header className='project-header'>

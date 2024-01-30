@@ -1,32 +1,32 @@
 import { projectsProps } from '../App';
 
 type ProjectsList = {
-  projects: projectsProps;
+  projects: projectsProps[];
   setIsProjectViewVisible: React.Dispatch<React.SetStateAction<boolean>>;
   setIsNewProjectFormVisible: React.Dispatch<React.SetStateAction<boolean>>;
-  setPickedKey: React.Dispatch<React.SetStateAction<string>>;
+  setPickedProjectID: React.Dispatch<React.SetStateAction<number>>;
 };
 export default function ProjectsList({
   projects,
   setIsProjectViewVisible,
   setIsNewProjectFormVisible,
-  setPickedKey,
+  setPickedProjectID,
 }: ProjectsList) {
-  function handleProjectListBtnClick(key: string) {
+  function handleProjectListBtnClick(index: number) {
     setIsProjectViewVisible(true);
     setIsNewProjectFormVisible(false);
-    setPickedKey(key);
+    setPickedProjectID(index);
   }
   return (
     <ul className='projects-list'>
-      {Object.keys(projects).map((key) => {
+      {projects.map((project, index) => {
         return (
-          <li key={key}>
+          <li key={project.title}>
             <button
-              onClick={() => handleProjectListBtnClick(key)}
+              onClick={() => handleProjectListBtnClick(index)}
               className='projects-list-button'
             >
-              {key}
+              {project.title}
             </button>
           </li>
         );

@@ -2,7 +2,7 @@ import { projectsProps } from '../App';
 import { SyntheticEvent, useRef } from 'react';
 type NewProjectFormProps = {
   setIsNewProjectFormVisible: React.Dispatch<React.SetStateAction<boolean>>;
-  setProjects: React.Dispatch<React.SetStateAction<projectsProps | undefined>>;
+  setProjects: React.Dispatch<React.SetStateAction<projectsProps[] | []>>;
 };
 
 export default function NewProjectForm({
@@ -12,20 +12,22 @@ export default function NewProjectForm({
   const title = useRef<HTMLInputElement>(null);
   const description = useRef<HTMLInputElement>(null);
   const dueDate = useRef<HTMLInputElement>(null);
+
   function handleProjectSave(e: SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsNewProjectFormVisible(false);
     setProjects((prev) => {
-      return {
+      return [
         ...prev,
-        [title.current!.value as string]: {
+        {
           title: title.current?.value as string,
           description: description.current?.value as string,
           dueDate: dueDate.current?.value as string,
         },
-      };
+      ];
     });
   }
+
   return (
     <section className='form-container'>
       <form className='form' onSubmit={handleProjectSave}>
@@ -36,11 +38,7 @@ export default function NewProjectForm({
           >
             Cancel
           </button>
-          <button
-            // onClick={handleProjectSave}
-            className='form-submit-button'
-            type='submit'
-          >
+          <button className='form-submit-button' type='submit'>
             Save
           </button>
         </div>
