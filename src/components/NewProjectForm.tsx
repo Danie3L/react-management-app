@@ -1,10 +1,27 @@
-export default function NewProjectForm() {
+type NewProjectFormProps = {
+  setIsNewProjectFormVisible: React.Dispatch<React.SetStateAction<boolean>>;
+};
+export default function NewProjectForm({
+  setIsNewProjectFormVisible,
+}: NewProjectFormProps) {
+  function handleProjectSave() {
+    setIsNewProjectFormVisible(false);
+  }
   return (
     <section className='form-container'>
       <form className='form'>
         <div className='form-buttons-container'>
-          <button className='form-cancel-button'>Cancel</button>
-          <button className='form-submit-button' type='submit'>
+          <button
+            onClick={() => setIsNewProjectFormVisible(false)}
+            className='form-cancel-button'
+          >
+            Cancel
+          </button>
+          <button
+            onClick={handleProjectSave}
+            className='form-submit-button'
+            type='submit'
+          >
             Save
           </button>
         </div>
