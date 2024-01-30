@@ -14,21 +14,25 @@ export type projectsProps = {
 
 function App() {
   const [isNewProjectFormVisible, setIsNewProjectFormVisible] = useState(false);
+  const [isProjectViewVisible, setIsProjectViewVisible] = useState(false);
   const [projects, setProjects] = useState<projectsProps>();
   return (
     <>
       <ProjectsMenu
         setIsNewProjectFormVisible={setIsNewProjectFormVisible}
+        setIsProjectViewVisible={setIsProjectViewVisible}
         projects={projects}
       />
-      {isNewProjectFormVisible ? (
+      {isNewProjectFormVisible && (
         <NewProjectForm
           setIsNewProjectFormVisible={setIsNewProjectFormVisible}
           setProjects={setProjects}
         />
-      ) : (
-        <Home setIsNewProjectFormVisible={setIsNewProjectFormVisible} />
       )}
+      {!isProjectViewVisible && !isNewProjectFormVisible ? (
+        <Home setIsNewProjectFormVisible={setIsNewProjectFormVisible} />
+      ) : null}
+      {isProjectViewVisible && <ProjectView />}
     </>
   );
 }
