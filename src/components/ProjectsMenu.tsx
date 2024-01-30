@@ -2,7 +2,7 @@ import { projectsProps } from '../App';
 import ProjectsList from './ProjectsList';
 type ProjectsMenuProps = {
   setIsNewProjectFormVisible: React.Dispatch<React.SetStateAction<boolean>>;
-  projects: projectsProps;
+  projects: projectsProps | undefined;
 };
 
 export default function ProjectsMenu({
