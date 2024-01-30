@@ -33,7 +33,12 @@ function App() {
         <Home setIsNewProjectFormVisible={setIsNewProjectFormVisible} />
       ) : null}
       {isProjectViewVisible && (
-        <ProjectView projectData={projects[pickedProjectID]} />
+        <ProjectView
+          projectData={projects[pickedProjectID]}
+          projects={projects}
+          setProjects={setProjects}
+          setIsProjectViewVisible={setIsProjectViewVisible}
+        />
       )}
     </>
   );
