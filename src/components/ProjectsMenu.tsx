@@ -3,12 +3,14 @@ import ProjectsList from './ProjectsList';
 type ProjectsMenuProps = {
   setIsNewProjectFormVisible: React.Dispatch<React.SetStateAction<boolean>>;
   setIsProjectViewVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  setPickedKey: React.Dispatch<React.SetStateAction<string>>;
   projects: projectsProps | undefined;
 };
 
 export default function ProjectsMenu({
   setIsNewProjectFormVisible,
   setIsProjectViewVisible,
+  setPickedKey,
   projects,
 }: ProjectsMenuProps) {
   function handleProjectMenuBtnClick() {
@@ -26,6 +28,7 @@ export default function ProjectsMenu({
           projects={projects}
           setIsProjectViewVisible={setIsProjectViewVisible}
           setIsNewProjectFormVisible={setIsNewProjectFormVisible}
+          setPickedKey={setPickedKey}
         />
       )}
     </section>

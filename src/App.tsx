@@ -15,12 +15,14 @@ export type projectsProps = {
 function App() {
   const [isNewProjectFormVisible, setIsNewProjectFormVisible] = useState(false);
   const [isProjectViewVisible, setIsProjectViewVisible] = useState(false);
+  const [pickedKey, setPickedKey] = useState<string>('');
   const [projects, setProjects] = useState<projectsProps>();
   return (
     <>
       <ProjectsMenu
         setIsNewProjectFormVisible={setIsNewProjectFormVisible}
         setIsProjectViewVisible={setIsProjectViewVisible}
+        setPickedKey={setPickedKey}
         projects={projects}
       />
       {isNewProjectFormVisible && (
@@ -32,7 +34,9 @@ function App() {
       {!isProjectViewVisible && !isNewProjectFormVisible ? (
         <Home setIsNewProjectFormVisible={setIsNewProjectFormVisible} />
       ) : null}
-      {isProjectViewVisible && <ProjectView />}
+      {isProjectViewVisible && (
+        <ProjectView projectData={projects![pickedKey]} />
+      )}
     </>
   );
 }

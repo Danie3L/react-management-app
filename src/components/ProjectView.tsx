@@ -1,13 +1,18 @@
-export default function ProjectView() {
+type ProjectViewProps = {
+  projectData: { title: string; description: string; dueDate: string };
+};
+
+export default function ProjectView({ projectData }: ProjectViewProps) {
+  const { title, description, dueDate } = projectData;
   return (
     <section className='project-section'>
       <header className='project-header'>
-        <h2 className='project-heading'>Learning React</h2>
+        <h2 className='project-heading'>{title}</h2>
         <button className='project-delete-button'>Delete</button>
       </header>
       <div className='project-info-container'>
-        <small className='project-date'>Dec 29, 2024</small>
-        <p className='project-description'>Learn react from scratch</p>
+        <small className='project-date'>{dueDate}</small>
+        <p className='project-description'>{description}</p>
       </div>
     </section>
   );
