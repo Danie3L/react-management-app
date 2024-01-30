@@ -1,6 +1,7 @@
 import ProjectsMenu from './components/ProjectsMenu';
 import Home from './components/Home';
 import NewProjectForm from './components/NewProjectForm';
+import ProjectView from './components/ProjectView';
 import { useState } from 'react';
 
 export type projectsProps = {

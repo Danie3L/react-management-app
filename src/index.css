@@ -152,3 +152,37 @@ body {
   color: #aaa6a6;
   text-align: left;
 }
+.project-section {
+  flex-basis: 80%;
+  height: 100%;
+  padding: 30px 20% 0 8%;
+  display: flex;
+  flex-direction: column;
+}
+.project-header {
+  display: flex;
+  justify-content: space-between;
+}
+.project-heading {
+  font-size: 35px;
+  letter-spacing: 0.2px;
+}
+.project-delete-button {
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.project-info-container {
+  margin-top: 10px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgb(143, 142, 142);
+}
+.project-date {
+  font-size: 17px;
+  color: rgb(105, 101, 101);
+}
+.project-description {
+  margin-top: 20px;
+  font-size: 18px;
+}
