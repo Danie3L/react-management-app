@@ -22,8 +22,7 @@ body {
 }
 .menu-heading {
   font-size: 26px;
-  text-align: center;
-  margin: 30px 0 10px 0;
+  margin: 30px 0 10px 25px;
   text-transform: uppercase;
 }
 .menu-button {
@@ -31,7 +30,7 @@ body {
   border: none;
   background: #ffffff;
   padding: 8px 26px;
-  margin: 20px auto;
+  margin: 20px 0 20px 25px;
   cursor: pointer;
   font-size: 18px;
   border-radius: 4px;
@@ -137,3 +136,19 @@ body {
 /* .form-input:focus {
   border-bottom: 4px solid #000;
 } */
+.projects-list {
+  margin: 30px 0 0 25px;
+  list-style: none;
+}
+.projects-list-button {
+  display: block;
+  width: 300px;
+  height: 50px;
+  font-size: 22px;
+  margin: 20px 0;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: #aaa6a6;
+  text-align: left;
+}

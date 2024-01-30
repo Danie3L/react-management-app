@@ -16,7 +16,10 @@ function App() {
   const [projects, setProjects] = useState<projectsProps>();
   return (
     <>
-      <ProjectsMenu setIsNewProjectFormVisible={setIsNewProjectFormVisible} />
+      <ProjectsMenu
+        setIsNewProjectFormVisible={setIsNewProjectFormVisible}
+        projects={projects}
+      />
       {isNewProjectFormVisible ? (
         <NewProjectForm
           setIsNewProjectFormVisible={setIsNewProjectFormVisible}

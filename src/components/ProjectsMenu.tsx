@@ -1,9 +1,13 @@
+import { projectsProps } from '../App';
+import ProjectsList from './ProjectsList';
 type ProjectsMenuProps = {
   setIsNewProjectFormVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  projects: projectsProps;
 };
 
 export default function ProjectsMenu({
   setIsNewProjectFormVisible,
+  projects,
 }: ProjectsMenuProps) {
   return (
     <section className='menu-section'>
@@ -14,6 +18,7 @@ export default function ProjectsMenu({
       >
         + Add Project
       </button>
+      {projects && <ProjectsList projects={projects} />}
     </section>
   );
 }
