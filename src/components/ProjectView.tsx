@@ -1,10 +1,11 @@
 import { projectsProps } from '../App';
-
+import ProjectForm from './ProjectForm';
 type ProjectViewProps = {
   projectData: { title: string; description: string; dueDate: string };
   projects: projectsProps[] | [];
   setProjects: React.Dispatch<React.SetStateAction<projectsProps[] | []>>;
   setIsProjectViewVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  pickedProjectID: number;
 };
 
 export default function ProjectView({
@@ -12,6 +13,7 @@ export default function ProjectView({
   projects,
   setProjects,
   setIsProjectViewVisible,
+  pickedProjectID,
 }: ProjectViewProps) {
   const { title, description, dueDate } = projectData;
 
@@ -36,6 +38,12 @@ export default function ProjectView({
         <small className='project-date'>{dueDate}</small>
         <p className='project-description'>{description}</p>
       </div>
+      <ProjectForm
+        title={title}
+        projects={projects}
+        setProjects={setProjects}
+        pickedProjectID={pickedProjectID}
+      />
     </section>
   );
 }

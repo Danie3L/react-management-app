@@ -8,6 +8,8 @@ export type projectsProps = {
   title: string;
   description: string;
   dueDate: string;
+  taskInputValue?: string;
+  tasks?: string[] | [];
 };
 
 function App() {
@@ -38,6 +40,7 @@ function App() {
           projects={projects}
           setProjects={setProjects}
           setIsProjectViewVisible={setIsProjectViewVisible}
+          pickedProjectID={pickedProjectID}
         />
       )}
     </>

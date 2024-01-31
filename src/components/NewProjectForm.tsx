@@ -23,6 +23,8 @@ export default function NewProjectForm({
           title: title.current?.value as string,
           description: description.current?.value as string,
           dueDate: dueDate.current?.value as string,
+          taskInputValue: '',
+          tasks: [],
         },
       ];
     });
